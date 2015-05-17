@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+var path = require('path')
+var args = require('minimist')(process.argv.slice(2))
+
+var dbUrl = args._[0]
+var map = args.map && path.resolve(process.cwd(), args.map)
+var reduce = args.reduce && path.resolve(process.cwd(), args.reduce)
+var watch = args.watch
+var main = require('../index')
+
+var options = {
+  startkey: args.startkey && JSON.parse(args.startkey),
+  endkey: args.endkey && JSON.parse(args.endkey),
+  group_level: args.group_level,
+  limit: args.limit
+}
+
+main({
+  dbUrl: dbUrl,
+  map: map,
+  reduce: reduce,
+  watch: watch,
+  options: options
+})
