@@ -1,0 +1,33 @@
+{
+  "name": "couchdb-view-tester",
+  "version": "0.0.0-semantically-released",
+  "description": "Your friendly helper to quickly iterate on CouchDB views",
+  "main": "index.js",
+  "bin": {
+    "couchdb-view-tester": "./bin/couchdb-view-tester"
+  },
+  "scripts": {
+    "test": "standard",
+    "start": "node index.js",
+    "watch": "watch 'clear && node index.js' ./lib",
+    "prepublish": "semantic-release pre",
+    "postpublish": "semantic-release post"
+  },
+  "author": "Gregor Martynus <gregor@martynus.net>",
+  "license": "ISC",
+  "dependencies": {
+    "cardinal": "^0.5.0",
+    "clear": "0.0.1",
+    "gaze": "^0.5.1",
+    "minimist": "^1.1.1",
+    "pouchdb": "^3.4.0"
+  },
+  "devDependencies": {
+    "semantic-release": "^3.3.1",
+    "standard": "^3.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gr2m/couchdb-view-tester"
+  }
+}
