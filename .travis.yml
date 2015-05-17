@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+- '0.10'
+sudo: false
+cache:
+  directories:
+  - node_modules
+notifications:
+  email: false
+env:
+  global:
+  - secure: Ej1r83OU/dVQhLccPCF9U65RM/CUkrCoLqfHMn+L0vdB9jW9kv+PDcleTTedeimx0cpl+6Zd47xU16h6nilCcVSGrvCZG0nlCXUpgKaaN1Tp6Jqf/jFTsYVU9bHntZGqLmA9QYTrDwRSb2EFxdE+F2czGK6wAMCwSVfxFwv1TA93rDBidYdp8yodizl4HPamV/jMKmA9WRFYEEI/M+TGY/cbmb19sUW7y6ieYDOrvoSTuSprnGd3l1+eRpxkRcMkT1uOXz5vWUUstrnFCPNNorhtNrdM8AdmsrquPtx1PNf1BqqcVtS1f3ugdu4ENV8xQLQT5gX69iMzm71TwTNUFIwGSFmBlKZG87/aVfB3EnQ4Ta19rpK9sGsAZhdaEv+jV5o9BXFA3jj4Ljfg/WmsUM01FLkHbRefDknRhDk1r0odZpcmWqfw3L0qECgkuI9TO7HW/ApQBR4RAMBqbzjvgl97J6KFPt+OPW3VLcgWrbwcTjg84kgiuZMx4eAz6X6XfxQgV9/wz0QgS6qP7S69R/CGR53cDRxQAUswH6bX2OAEDS49uRxb5hyIBCw4Y8apfkSjpK20A4+2cUuYQ3Z3Tr2soWTcF2SwJUZymzWUeqsGL3Juqoyhx5uKWQX9WBMFNbyAIwnLDoECkUp7e2QV4ropdZTgWvWZ9q8itmvet6E=
+deploy:
+  provider: npm
+  email: gregor@martynus.net
+  skip_cleanup: true
+  api_key:
+    secure: nEt5QNhu9BbQSTwNLfVb69mXhi4fy2763J7hhtgEEU1c0RBZb14JPN8FQ/CnrZti6G1IVLOXg7TBt1DfMhe1AoVuR16eisq4eUpT6yR1PifAowBABLI37uCmXXYYEJM+gEzQvcYTehcTGga8/FFnP+1VkKZl8QPx/VX1NryzH6fIswLqD8+66rgk7c27SCVgsuN+fySdk/0n0FVE+4ckH5IpIqHpu7oYToIb5BVSau0TD3kBxN0umnLk5UWW3dhhl0o/zjLqislQDUZPECXe79owRa4Xtkez9BObVu+3RsW9rgVJeUZcAhRyghrhiMhGDAKvsW6R+wt91xdox7Wc3Juvx0EkC4R2Bp+limhkr7emK8b9N3R06v29B6RPAqKShHBarrP998CE+HWklUBMWGHLJa4/yIY1OEqDiOLfm0s7tUsvgClqjsPZ/T856N6xCM40Ksc9qi+l62wwFg55UUxSbIaR8fbgdgPITbQHKNgU+gjuf7rk8wbYhBhbP+uoUysA60wkUM0PWqVkH9LHMTqmpjQU20oJNnylmCNzj6jsUmGMYavzjMfGzL8T4h/p296T6UzktNG6BsQYjKGi0HzBxdFen71bqhQOVn8gH0h1HqOBRCmxPRnoX3Q9yhkImeknnFmvSz+1MDTq2QNIMgOvbC0wl6GXGZIEGujjj5Q=
+  on:
+    branch: master
+    repo: gr2m/couchdb-view-tester
+before_deploy:
+  # https://github.com/boennemann/semantic-release/issues/18
+  - npm config set spin false --global
