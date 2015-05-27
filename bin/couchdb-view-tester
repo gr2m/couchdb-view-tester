@@ -13,6 +13,7 @@ var options = {
   startkey: args.startkey && JSON.parse(args.startkey),
   endkey: args.endkey && JSON.parse(args.endkey),
   group_level: args.group_level,
+  group: args.group,
   limit: args.limit
 }
 
