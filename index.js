@@ -11,8 +11,14 @@ module.exports = function (config) {
     map: config.map && require(config.map)
   }
 
+  console.log('config.reduce')
+  console.log(config.reduce)
   if (config.reduce) {
-    mapReduce.reduce = config.reduce && require(config.reduce)
+    mapReduce.reduce = {
+      '_sum': '_sum',
+      '_count': '_count',
+      '_stats': '_stats'
+    }[config.reduce] || require(config.reduce)
   }
 
   doQuery(db, mapReduce, config.options)
@@ -39,6 +45,8 @@ module.exports = function (config) {
 }
 
 function doQuery (db, mapReduce, options) {
+  console.log('mapReduce')
+  console.log(mapReduce)
   db.query(mapReduce, options, function (error, response) {
     if (error) {
       return console.log(error)

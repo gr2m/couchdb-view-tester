@@ -5,7 +5,11 @@ var args = require('minimist')(process.argv.slice(2))
 
 var dbUrl = args._[0]
 var map = args.map && path.resolve(process.cwd(), args.map)
-var reduce = args.reduce && path.resolve(process.cwd(), args.reduce)
+var reduce = args.reduce && {
+  '_sum': '_sum',
+  '_count': '_count',
+  '_stats': '_stats'
+}[args.reduce] || path.resolve(process.cwd(), args.reduce)
 var watch = args.watch
 var main = require('../index')
 
