@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "semantic-release": "^6.3.0",
-    "standard": "^3.11.1"
+    "standard": "^7.1.2"
   },
   "repository": {
     "type": "git",
