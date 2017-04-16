@@ -31,7 +31,7 @@ module.exports = function(doc) {
 
 ```js
 // reduce.js
-function (key, values, rereduce) {
+module.exports = function (key, values, rereduce) {
   return sum(values);
 }
 ```
