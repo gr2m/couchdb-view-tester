@@ -18,7 +18,7 @@
     "clear": "0.0.1",
     "gaze": "^0.5.1",
     "minimist": "^1.1.1",
-    "pouchdb": "^3.5.0"
+    "pouchdb": "^7.2.2"
   },
   "devDependencies": {
     "semantic-release": "^6.3.0",
