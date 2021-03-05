@@ -24,8 +24,5 @@
     "semantic-release": "^6.3.0",
     "standard": "^7.1.2"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gr2m/couchdb-view-tester"
-  }
+  "repository": "github:gr2m/couchdb-view-tester"
 }
